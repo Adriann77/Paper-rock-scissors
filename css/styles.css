@@ -51,6 +51,9 @@ body {
   margin: auto 10px;
   transition: box-shadow 0.3s, transform 0.3s;
 }
+.choose .pick button i {
+  z-index: -1;
+}
 .choose .pick button:hover {
   box-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7), 1px 2px 4px 0px rgba(0, 255, 255, 0.7), 2px 4px 8px 0px rgba(0, 255, 255, 0.7), 2px 4px 16px 0px rgba(0, 255, 255, 0.7);
   transform: scale(1.1);

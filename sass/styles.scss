@@ -53,6 +53,10 @@ body {
 			margin: auto 10px;
 			transition: box-shadow 0.3s, transform 0.3s;
 
+			i{
+				z-index: -1;
+			}
+
 			&:hover {
 				box-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7), 1px 2px 4px 0px rgba(0, 255, 255, 0.7),
 					2px 4px 8px 0px rgba(0, 255, 255, 0.7), 2px 4px 16px 0px rgba(0, 255, 255, 0.7);
