@@ -6,6 +6,7 @@ const AIPick = document.querySelector('.AI-pick')
 const result = document.querySelector('.result')
 const secondScreen = document.querySelector('.second-screen')
 const resultScore = document.querySelector('.score')
+const playAgainBtn = document.querySelector('.play-again')
 let score = 0
 
 const showResults = e => {
@@ -74,4 +75,12 @@ const showResults = e => {
 		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
 	}
 }
+
+const replay = () =>{
+    btns.forEach(el => el.classList.remove('hide'))
+	title.classList.remove('hide')
+	secondScreen.classList.remove('show')
+}
+
 btns.forEach(e => e.addEventListener('click', showResults))
+playAgainBtn.addEventListener('click', replay)

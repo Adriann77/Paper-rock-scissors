@@ -4,7 +4,7 @@
 	padding: 0;
 }
 
-@mixin btn{
+@mixin btn {
 	button {
 		font-size: 64px;
 		width: 150px;
@@ -18,7 +18,7 @@
 		padding: 25px;
 		cursor: pointer;
 		margin: auto 10px;
-		transition: box-shadow 0.3s, transform 0.3s, visibility 0.3s, all .3s;
+		transition: box-shadow 0.3s, transform 0.3s, visibility 0.3s, all 0.3s;
 
 		i {
 			z-index: -1;
@@ -52,7 +52,6 @@ body {
 	height: 100vh;
 }
 .choose {
-
 	position: relative;
 	h1 {
 		font-size: 42px;
@@ -84,7 +83,7 @@ body {
 	}
 }
 
-.second-screen{
+.second-screen {
 	display: none;
 	align-items: center;
 	justify-content: center;
@@ -92,44 +91,72 @@ body {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,-50%);
-	transition: all .3s;
+	transform: translate(-50%, -50%);
+	transition: all 0.3s;
 
-	div{
+	div {
 		margin: 20px;
 
-		h2{
+		h2 {
 			text-align: center;
 			margin-bottom: 20px;
 		}
 
 		@include btn;
-		}
-
-		h3{
-			position: absolute;
-			bottom: -30px;
-		}
 	}
 
-
-	.show{
-		animation: show 2.5s  forwards;
-		display: flex;
-	}
-
-	@keyframes show {
-		from{
-			opacity: 0;
-		}
-		to{
-			opacity: 1;
-		}
-	}
-
-	.sample{
+	h3 {
 		position: absolute;
-		bottom: -120px;
-		padding:24px;
-		font-size: 36px;
+		bottom: -30px;
 	}
+}
+
+.show {
+	animation: show 2.5s forwards;
+	display: flex;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.sample {
+	position: absolute;
+	bottom: -120px;
+	padding: 24px;
+	font-size: 36px;
+}
+
+.play-again {
+	position: absolute;
+	top: -150px;
+	padding: 24px;
+	border-radius: 15px;
+	background: none;
+	color: white;
+	font-size: 24px;
+	border: 3px solid white;
+	box-shadow: inset 0px 0px 10px rgb(241, 236, 236);
+	background-color: none;
+	background: none;
+	color: white;
+	padding: 25px;
+	cursor: pointer;
+	margin: auto 10px;
+	transition: box-shadow 0.3s, transform 0.3s, visibility 0.3s, all 0.3s;
+
+	i {
+		z-index: -1;
+	}
+
+	&:hover {
+		box-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7), 1px 2px 4px 0px rgba(0, 255, 255, 0.7),
+			2px 4px 8px 0px rgba(0, 255, 255, 0.7), 2px 4px 16px 0px rgba(0, 255, 255, 0.7);
+		transform: scale(1.1);
+	}
+}
