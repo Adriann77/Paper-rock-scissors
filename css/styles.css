@@ -131,4 +131,10 @@ body {
   to {
     opacity: 1;
   }
+}
+.sample {
+  position: absolute;
+  bottom: -120px;
+  padding: 24px;
+  font-size: 36px;
 }/*# sourceMappingURL=styles.css.map */

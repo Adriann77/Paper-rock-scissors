@@ -5,6 +5,8 @@ const playerPick = document.querySelector('.player-pick--btn')
 const AIPick = document.querySelector('.AI-pick')
 const result = document.querySelector('.result')
 const secondScreen = document.querySelector('.second-screen')
+const resultScore = document.querySelector('.score')
+let score = 0
 
 const showResults = e => {
 	btns.forEach(el => el.classList.add('hide'))
@@ -19,48 +21,57 @@ const showResults = e => {
 
 	if (playerPicked.includes('paper') && AIPicked === 'paper') {
 		result.textContent = 'Its a Tie'
-        playerPick.innerHTML = '<i class="fa-regular fa-hand"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
+		playerPick.innerHTML = '<i class="fa-regular fa-hand"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
+	} else if (playerPicked.includes('paper') && AIPicked === 'rock') {
+		result.textContent = 'You won'
+		score++
+        resultScore.textContent = score
+
+		playerPick.innerHTML = '<i class="fa-regular fa-hand"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
+	} else if (playerPicked.includes('paper') && AIPicked === 'scissors') {
+		result.textContent = 'AI wins'
+		score--
+        resultScore.textContent = score
+
+		playerPick.innerHTML = '<i class="fa-regular fa-hand"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
+	} else if (playerPicked.includes('rock') && AIPicked === 'paper') {
+		result.textContent = 'AI wins'
+		score--
+		resultScore.textContent = score
+
+		playerPick.innerHTML = '<i class="fa-solid fa-hand-fist"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
+	} else if (playerPicked.includes('rock') && AIPicked === 'rock') {
+		result.textContent = 'Its a Tie'
+		playerPick.innerHTML = '<i class="fa-solid fa-hand-fist"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-solid fa-hand-fist"></i></button>'
+	} else if (playerPicked.includes('rock') && AIPicked === 'scissors') {
+		result.textContent = 'You won'
+		score++
+		resultScore.textContent = score
+
+		playerPick.innerHTML = '<i class="fa-solid fa-hand-fist"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
+	} else if (playerPicked.includes('scissors') && AIPicked === 'paper') {
+		result.textContent = 'You won'
+		score++
+		resultScore.textContent = score
+
+		playerPick.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
+	} else if (playerPicked.includes('scissors') && AIPicked === 'rock') {
+		result.textContent = 'AI Wins'
+		score--
+		resultScore.textContent = score
+		playerPick.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-solid fa-hand-fist"></i></button>'
+	} else if (playerPicked.includes('scissors') && AIPicked === 'scissors') {
+		result.textContent = 'Its a Tie'
+		playerPick.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>'
+		AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
 	}
-    else if( playerPicked.includes('paper') && AIPicked === 'rock'){
-        result.textContent = 'You won'
-        playerPick.innerHTML = '<i class="fa-regular fa-hand"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
-    }
-    else if( playerPicked.includes('paper') && AIPicked === 'scissors'){
-        result.textContent = 'AI wins'
-        playerPick.innerHTML = '<i class="fa-regular fa-hand"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
-    }
-    else if( playerPicked.includes('rock') && AIPicked === 'paper'){
-        result.textContent = 'AI wins'
-        playerPick.innerHTML = '<i class="fa-solid fa-hand-fist"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
-    }
-    else if( playerPicked.includes('rock') && AIPicked === 'rock'){
-        result.textContent = 'Its a Tie'
-        playerPick.innerHTML = '<i class="fa-solid fa-hand-fist"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-solid fa-hand-fist"></i></button>'
-    }
-    else if( playerPicked.includes('rock') && AIPicked === 'scissors'){
-        result.textContent = 'You won'
-        playerPick.innerHTML = '<i class="fa-solid fa-hand-fist"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
-    }
-    else if( playerPicked.includes('scissors') && AIPicked === 'paper'){
-        result.textContent = 'You won'
-        playerPick.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand"></i></button>'
-    }
-    else if( playerPicked.includes('scissors') && AIPicked === 'rock'){
-        result.textContent = 'AI Wins'
-        playerPick.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-solid fa-hand-fist"></i></button>'
-    }
-    else if( playerPicked.includes('scissors') && AIPicked === 'scissors'){
-        result.textContent = 'Its a Tie'
-        playerPick.innerHTML = '<i class="fa-regular fa-hand-scissors"></i>'
-        AIPick.innerHTML = '<h2>AI pick:</h2><button><i class="fa-regular fa-hand-scissors"></i></button>'
-    }
 }
 btns.forEach(e => e.addEventListener('click', showResults))
