@@ -7,8 +7,8 @@
 @mixin btn {
 	button {
 		font-size: 64px;
-		width: 150px;
-		height: 150px;
+		min-width: 150px;
+		min-height: 150px;
 		border: 3px solid white;
 		box-shadow: inset 0px 0px 10px rgb(241, 236, 236);
 		border-radius: 50%;
@@ -65,7 +65,6 @@ body {
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-
 		@include btn;
 	}
 }
@@ -101,8 +100,6 @@ body {
 			text-align: center;
 			margin-bottom: 20px;
 		}
-
-		@include btn;
 	}
 
 	h3 {
