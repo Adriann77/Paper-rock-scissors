@@ -26,8 +26,8 @@ const showResults = e => {
 	console.log(AIPicked);
 	if (
 		(playerPicked.includes('paper') && AIPicked === 'fist') ||
-		(playerPicked.includes('rock') && AIPicked === 'scissors') ||
-		(playerPicked.includes('scissors') && AIPicked === 'rocks')
+		(playerPicked.includes('fist') && AIPicked === 'scissors') ||
+		(playerPicked.includes('scissors') && AIPicked === 'paper')
 	) {
 		result.textContent = 'You won';
 		score++;
