@@ -8,7 +8,7 @@ const secondScreen = document.querySelector('.second-screen');
 const resultScore = document.querySelector('.score');
 const playAgainBtn = document.querySelector('.play-again');
 let score = 0;
-let AIscore =0;
+let AIscore = 0;
 
 const showResults = e => {
 	btns.forEach(el => el.classList.add('hide'));
@@ -24,36 +24,24 @@ const showResults = e => {
 
 	console.log(playerPicked);
 	console.log(AIPicked);
-	if (playerPicked.includes('paper') && AIPicked === 'fist') {
+	if (
+		(playerPicked.includes('paper') && AIPicked === 'fist') ||
+		(playerPicked.includes('rock') && AIPicked === 'scissors') ||
+		(playerPicked.includes('scissors') && AIPicked === 'rocks')
+	) {
 		result.textContent = 'You won';
 		score++;
-		playerPick.firstChild.style.color = 'green'
-		AIPick.firstChild.style.color = 'red'
-	} else if (playerPicked.includes('paper') && AIPicked === 'scissors') {
+		playerPick.firstChild.style.color = 'green';
+		AIPick.firstChild.style.color = 'red';
+	} else if (
+		(playerPicked.includes('paper') && AIPicked === 'scissors') ||
+		(playerPicked.includes('fist') && AIPicked === 'paper') ||
+		(playerPicked.includes('scissors') && AIPicked === 'fist')
+	) {
 		result.textContent = 'AI wins';
-		AIscore++
-		playerPick.firstChild.style.color = 'red'
-		AIPick.firstChild.style.color = 'green'
-	} else if (playerPicked.includes('fist') && AIPicked === 'paper') {
-		result.textContent = 'AI wins';
-		AIscore++
-		playerPick.firstChild.style.color = 'red'
-		AIPick.firstChild.style.color = 'green'
-	} else if (playerPicked.includes('fist') && AIPicked === 'scissors') {
-		result.textContent = 'You won';
-		score++;
-		playerPick.firstChild.style.color = 'green'
-		AIPick.firstChild.style.color = 'red'
-	} else if (playerPicked.includes('scissors') && AIPicked === 'paper') {
-		result.textContent = 'You won';
-		score++;
-		playerPick.firstChild.style.color = 'green'
-		AIPick.firstChild.style.color = 'red'
-	} else if (playerPicked.includes('scissors') && AIPicked === 'fist') {
-		result.textContent = 'AI Wins';
-		AIscore++
-		playerPick.firstChild.style.color = 'red'
-		AIPick.firstChild.style.color = 'green'
+		AIscore++;
+		playerPick.firstChild.style.color = 'red';
+		AIPick.firstChild.style.color = 'green';
 	} else {
 		result.textContent = 'Its a Tie';
 	}
