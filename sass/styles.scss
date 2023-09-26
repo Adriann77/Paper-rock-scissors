@@ -72,7 +72,7 @@ body {
 }
 
 .hide {
-	animation: hide 1s linear forwards;
+	animation: hide .3s forwards;
 }
 
 @keyframes hide {
@@ -81,6 +81,7 @@ body {
 	}
 	to {
 		opacity: 0;
+		display: none;
 	}
 }
 
@@ -154,7 +155,7 @@ body {
 }
 
 .show {
-	animation: show 2.5s forwards;
+	animation: show .6s forwards;
 	display: flex;
 }
 

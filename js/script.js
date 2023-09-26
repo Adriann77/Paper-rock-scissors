@@ -20,10 +20,8 @@ const showResults = e => {
 
 	playerPick.innerHTML = `<i class="fa-solid fa-hand-${playerPicked}  show"></i>`;
 
-	AIPick.innerHTML = `<i class="fa-solid fa-hand-${AIPicked}"></i>`;
+	AIPick.innerHTML = `<i class="fa-solid fa-hand-${AIPicked}" show></i>`;
 
-	console.log(playerPicked);
-	console.log(AIPicked);
 	if (
 		(playerPicked.includes('paper') && AIPicked === 'fist') ||
 		(playerPicked.includes('fist') && AIPicked === 'scissors') ||
