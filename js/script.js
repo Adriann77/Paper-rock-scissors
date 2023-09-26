@@ -2,12 +2,13 @@ const btns = document.querySelectorAll('.one');
 const PRS = ['paper', 'fist', 'scissors'];
 const title = document.querySelector('h1');
 const playerPick = document.querySelector('.player-pick--btn');
-const AIPick = document.querySelector('.AI-pick');
+const AIPick = document.querySelector('.ai-pick-btn');
 const result = document.querySelector('.result');
 const secondScreen = document.querySelector('.second-screen');
 const resultScore = document.querySelector('.score');
 const playAgainBtn = document.querySelector('.play-again');
 let score = 0;
+let AIscore =0;
 
 const showResults = e => {
 	btns.forEach(el => el.classList.add('hide'));
@@ -19,32 +20,44 @@ const showResults = e => {
 
 	playerPick.innerHTML = `<i class="fa-solid fa-hand-${playerPicked}  show"></i>`;
 
-	AIPick.innerHTML = `<h2>AI pick:</h2><button><i class="fa-solid fa-hand-${AIPicked}"></i></button>`;
+	AIPick.innerHTML = `<i class="fa-solid fa-hand-${AIPicked}"></i>`;
 
 	console.log(playerPicked);
 	console.log(AIPicked);
 	if (playerPicked.includes('paper') && AIPicked === 'fist') {
 		result.textContent = 'You won';
 		score++;
+		playerPick.firstChild.style.color = 'green'
+		AIPick.firstChild.style.color = 'red'
 	} else if (playerPicked.includes('paper') && AIPicked === 'scissors') {
 		result.textContent = 'AI wins';
-		score--;
+		AIscore++
+		playerPick.firstChild.style.color = 'red'
+		AIPick.firstChild.style.color = 'green'
 	} else if (playerPicked.includes('fist') && AIPicked === 'paper') {
 		result.textContent = 'AI wins';
-		score--;
+		AIscore++
+		playerPick.firstChild.style.color = 'red'
+		AIPick.firstChild.style.color = 'green'
 	} else if (playerPicked.includes('fist') && AIPicked === 'scissors') {
 		result.textContent = 'You won';
 		score++;
+		playerPick.firstChild.style.color = 'green'
+		AIPick.firstChild.style.color = 'red'
 	} else if (playerPicked.includes('scissors') && AIPicked === 'paper') {
 		result.textContent = 'You won';
 		score++;
+		playerPick.firstChild.style.color = 'green'
+		AIPick.firstChild.style.color = 'red'
 	} else if (playerPicked.includes('scissors') && AIPicked === 'fist') {
 		result.textContent = 'AI Wins';
-		score--;
+		AIscore++
+		playerPick.firstChild.style.color = 'red'
+		AIPick.firstChild.style.color = 'green'
 	} else {
 		result.textContent = 'Its a Tie';
 	}
-	resultScore.textContent = score;
+	resultScore.innerHTML = `${score} - ${AIscore}`;
 };
 
 const replay = () => {
