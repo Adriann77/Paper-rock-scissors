@@ -15,6 +15,6 @@ This project is a simple Paper-Rock-Scissors game implemented using HTML, SCSS, 
 Experience the Paper Rock Scissors game live at [Paper Rock Scissors Live Demo](https://adriann77.github.io/Paper-rock-scissors/).
 
 
-<img width="50%" alt="image" src="https://github.com/Adriann77/Paper-rock-scissors/assets/60987859/836c19d3-476a-492c-aa45-54ae3703994d">  <img width="50%" alt="image" src="https://github.com/Adriann77/Paper-rock-scissors/assets/60987859/c5f3f0e9-6dbe-414b-bf64-8c737c72f789">
+<img width="40%" alt="image" src="https://github.com/Adriann77/Paper-rock-scissors/assets/60987859/836c19d3-476a-492c-aa45-54ae3703994d">  <img width="40%" alt="image" src="https://github.com/Adriann77/Paper-rock-scissors/assets/60987859/c5f3f0e9-6dbe-414b-bf64-8c737c72f789">
 
 
